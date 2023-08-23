@@ -1,0 +1,6 @@
+{
+	"name": "ingrationRuntimeFileServer",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
