@@ -1,0 +1,9 @@
+{
+	"name": "ws-adf-proyectofinal",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "aa15deaa-4d0a-4666-be44-625542835228",
+		"tenantId": "7d1e4c5f-5ab6-491f-ae1b-ecb05599107f"
+	}
+}
