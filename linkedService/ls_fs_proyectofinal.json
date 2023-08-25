@@ -1,17 +1,24 @@
 {
 	"name": "ls_fs_proyectofinal",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "C:\\data_adf",
 			"userId": "deygerson.mendez_blu",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmOGQ5Y2ZjYy1mZjUyLTRmYzQtYTNhOC03MDJjOWM1NTJhMTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_kv_proyectofinal",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "fs-secret"
+			}
 		},
 		"connectVia": {
 			"referenceName": "ingrationRuntimeFileServer",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }

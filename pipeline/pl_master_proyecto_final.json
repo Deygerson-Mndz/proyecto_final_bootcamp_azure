@@ -1,0 +1,31 @@
+{
+	"name": "pl_master_proyecto_final",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute pl_proyecto_final",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_proyecto_final",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"file_name": "transacciones.csv",
+						"container": "datalake",
+						"path": "bronze/file_server/csv",
+						"id_empresa": "4",
+						"monto": "3000"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipelines maestros"
+		},
+		"annotations": []
+	}
+}
