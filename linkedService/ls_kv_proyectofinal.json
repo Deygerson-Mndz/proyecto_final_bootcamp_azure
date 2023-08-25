@@ -1,0 +1,10 @@
+{
+	"name": "ls_kv_proyectofinal",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-proyectofinalbootcamp.vault.azure.net/"
+		}
+	}
+}
