@@ -79,6 +79,70 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "bronze to silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "On premises to bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/deygerson_mendez@outlook.com/Transformación de Datos con Azure Databricks (Bronze to Silver)",
+					"baseParameters": {
+						"id_empresa": {
+							"value": "@pipeline().parameters.id_empresa",
+							"type": "Expression"
+						},
+						"monto": {
+							"value": "@pipeline().parameters.monto",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_adb_proyectofinal",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "silver to gold",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "bronze to silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/deygerson_mendez@outlook.com/Transformación de Datos con Azure Databricks (Silver to Gold)"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_adb_proyectofinal",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
@@ -89,6 +153,12 @@
 				"type": "string"
 			},
 			"path": {
+				"type": "string"
+			},
+			"id_empresa": {
+				"type": "string"
+			},
+			"monto": {
 				"type": "string"
 			}
 		},
