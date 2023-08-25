@@ -3,12 +3,23 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Pipeline1",
+				"name": "Execute pl_proyecto_final",
 				"type": "ExecutePipeline",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"waitOnCompletion": true
+					"pipeline": {
+						"referenceName": "pl_proyecto_final",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"file_name": "transacciones.csv",
+						"container": "datalake",
+						"path": "bronze/file_server/csv",
+						"id_empresa": "4",
+						"monto": "3000"
+					}
 				}
 			}
 		],
