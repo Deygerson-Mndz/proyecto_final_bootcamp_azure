@@ -90,12 +90,6 @@
 			},
 			"path": {
 				"type": "string"
-			},
-			"id_empresa": {
-				"type": "string"
-			},
-			"monto": {
-				"type": "string"
 			}
 		},
 		"annotations": []

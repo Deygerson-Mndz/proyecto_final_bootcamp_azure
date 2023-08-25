@@ -12,9 +12,7 @@
 				"parameters": {
 					"file_name": "transacciones.csv",
 					"container": "datalake",
-					"path": "bronze/file_server/csv",
-					"id_empresa": "3",
-					"monto": "400"
+					"path": "bronze/file_server/csv"
 				}
 			}
 		],
